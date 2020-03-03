@@ -185,58 +185,79 @@
 
 
         </div>
+        <!-- About me start -->
         <h1 class="heading_tag" id="hide_for_sometime">About me</h1>
         <div class="container" id="hide_for_sometime">
             <div class="col-sm-6" style="margin: 0px auto;">
                 <div class="col-small" style="text-align: center;">
-                    <p>{{ab.about|capfirst|safe}}</p>
+                    <p>{{ ab.about|capfirst|safe }}</p>
                 </div>
             </div>
         </div>
+        <!-- Endhere -->
+        <!-- Projects -->
         <h1 class="heading_tag" id="project">Projects</h1>
         <div id="hide_for_sometime" class="col-sm-6"
             style="padding: 50px 50px 50px 50px;margin: 20px auto;box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);border-radius: 10%;">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-12" id="project_gap"> <a href="" data-toggle="modal" data-target="#exampleModalCenter">
+                    <!-- FIRST -->
+                    <div class="col-sm-12" id="project_gap">
+                        <a href="" data-toggle="modal" data-target="#exampleModalCenter">
                             <img data-aos="zoom-in-right" src="" width="200px" height="200px" alt="none"
                                 style="border-radius: 50%;">
                             <div data-aos="fade-left" class="col-sm-8" style="float: right;margin: 30px 10px 0 10px;">
                                 <p>Image will not load.</p>
-                        </a> </div>
+                        </a>
+                    </div>
                 </div>
-                <div class="col-sm-12" id="project_gap"> <a href="" data-toggle="modal" data-target="#exampleModalCenter"> <img
-                            data-aos="zoom-in-left" src="" width="200px" height="200px" alt="none"
+                <!-- SECOND -->
+                <div class="col-sm-12" id="project_gap">
+                    <a href="" data-toggle="modal" data-target="#exampleModalCenter">
+                        <img data-aos="zoom-in-left" src="" width="200px" height="200px" alt="none"
                             style="border-radius: 50%;float:right">
                         <div data-aos="fade-right" class="col-sm-8" style="float: left;margin: 30px 10px 0 10px;">
                             <p>Image will not load.</p>
-                    </a> </div>
+                    </a>
+                </div>
             </div>
-            <div class="col-sm-12" id="project_gap"> <a href="" data-toggle="modal" data-target="#exampleModalCenter"> <img
-                        data-aos="zoom-in-right" src="" width="200px" height="200px" alt="none"
+            <!-- THIRD -->
+            <div class="col-sm-12" id="project_gap">
+                <a href="" data-toggle="modal" data-target="#exampleModalCenter">
+                    <img data-aos="zoom-in-right" src="" width="200px" height="200px" alt="none"
                         style="border-radius: 50%;float:left">
                     <div data-aos="fade-left" class="col-sm-8" style="float: right;margin: 30px 10px 0 10px;">
                         <p>Image will not load.</p>
-                </a> </div>
+                </a>
+            </div>
         </div>
-        </div>
-        </div>
-        </div>
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content" style="background-color: black;">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5> <button type="button" class="close"
-                            data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
-                    </div>
-                    <div class="modal-body"> ... </div>
-                    <div class="modal-footer"> <button type="button" class="btn btn-secondary"
-                            data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">Save
-                            changes</button> </div>
+        <!-- DONE, we'll start a loop from here -->
+    </div>
+    </div>
+    </div>
+    <!-- Endhere -->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="background-color: black;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
+    </div>
+
     <!-- Skills start here -->
     <div class="container"
         style="padding-bottom: 10px;box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); border-radius: 10%;">
