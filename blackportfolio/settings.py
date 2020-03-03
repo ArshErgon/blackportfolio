@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 INSTALLED_APPS = [
     'portfolio',
+    'django.contrib.sitemaps',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
