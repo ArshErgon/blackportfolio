@@ -28,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
+# Turn it false in Developement
+SECURE_SSL_REDIRECT = True
+
 
 # Application definition
 
