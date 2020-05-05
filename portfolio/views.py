@@ -1,12 +1,15 @@
 from django.shortcuts import render, redirect
 
-from .models import SkillModel, AboutModel, LearntModel, ContactModel, SeoModel
+from .models import SkillModel, AboutModel, LearntModel, SeoModel, Project, SocialMedia
 
 def home(request):
     skills = SkillModel.objects.all()
     abouts = AboutModel.objects.all()
     learnt = LearntModel.objects.all()
     seos = SeoModel.objects.all()
+    media = projects = ""
+    for media in SocialMedia.objects.all():
+        pass
     ab = seo = lt = ab = sk = ""
     for sk in skills:
         pass
@@ -18,12 +21,5 @@ def home(request):
         pass
     for ab in abouts:
         pass
-
-    # Contact me
-    if request.method == 'POST':
-        personName = request.POST.get('name')
-        personEmail = request.POST.get('email')
-        personNumber = request.POST.get('phNumber')
-        ContactModel.objects.create(name=personName, email=personEmail, phnumber=personNumber)
-        return redirect('/')
-    return render(request, 'home/index.html', {'sk':sk, 'ab':ab, 'lt':lt, 'seo':seo})
+        
+    return render(request, 'home/index.html', {'sk':sk, 'ab':ab, 'lt':lt, 'seo':seo, 'projects':Project.objects.all(), 'media':media})

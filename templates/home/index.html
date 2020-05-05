@@ -10,9 +10,15 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <!-- <body oncontextmenu="return false;"> -->
-
+<style>
+    ::selection {
+        color: #FFFFF9;
+        background-color: grey;
+    }
+</style>
 <body>
     <div class="full_body">
         <div class="navbar" style="position: fixed;">
@@ -185,7 +191,7 @@
 
 
         </div>
-        <h1 class="heading_tag" id="hide_for_sometime">About me</h1>
+        <h1 class="heading_tag" id="hide_for_sometime" style="bottom:-20px !important;">About me</h1>
         <div class="container" id="hide_for_sometime">
             <div class="col-sm-6" style="margin: 0px auto;">
                 <div class="col-small" style="text-align: center;">
@@ -197,46 +203,20 @@
         <div id="hide_for_sometime" class="col-sm-6"
             style="padding: 50px 50px 50px 50px;margin: 20px auto;box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);border-radius: 10%;">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-12" id="project_gap"> <a href="" data-toggle="modal" data-target="#exampleModalCenter">
-                            <img data-aos="zoom-in-right" src="" width="200px" height="200px" alt="none"
-                                style="border-radius: 50%;">
-                            <div data-aos="fade-left" class="col-sm-8" style="float: right;margin: 30px 10px 0 10px;">
-                                <p>Image will not load.</p>
-                        </a> </div>
-                </div>
-                <div class="col-sm-12" id="project_gap"> <a href="" data-toggle="modal" data-target="#exampleModalCenter"> <img
-                            data-aos="zoom-in-left" src="" width="200px" height="200px" alt="none"
-                            style="border-radius: 50%;float:right">
-                        <div data-aos="fade-right" class="col-sm-8" style="float: left;margin: 30px 10px 0 10px;">
-                            <p>Image will not load.</p>
-                    </a> </div>
-            </div>
-            <div class="col-sm-12" id="project_gap"> <a href="" data-toggle="modal" data-target="#exampleModalCenter"> <img
-                        data-aos="zoom-in-right" src="" width="200px" height="200px" alt="none"
-                        style="border-radius: 50%;float:left">
-                    <div data-aos="fade-left" class="col-sm-8" style="float: right;margin: 30px 10px 0 10px;">
-                        <p>Image will not load.</p>
-                </a> </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content" style="background-color: black;">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5> <button type="button" class="close"
-                            data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
-                    </div>
-                    <div class="modal-body"> ... </div>
-                    <div class="modal-footer"> <button type="button" class="btn btn-secondary"
-                            data-dismiss="modal">Close</button> <button type="button" class="btn btn-primary">Save
-                            changes</button> </div>
+                <div class=row>
+                    {% for projects in projects %}
+                    <div class="col-sm-4" data-aos="zoom-in-up">
+                        <img src="{{ projects.project_image|safe }}" alt="" width="100%" height="auto">
+                        <p><em>{{ projects.project_body|safe }}...</em></p>
+                    </div> 
+                    {% endfor %}
                 </div>
             </div>
         </div>
+        </div>
+        </div>
+        </div>
+       
     <!-- Skills start here -->
     <div class="container"
         style="padding-bottom: 10px;box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); border-radius: 10%;">
@@ -276,27 +256,27 @@
         <div class="col-sm-6" style="margin: auto;">
             <div class="container">
                 <div class="col-sm-8" style="margin: 0px auto;">
-
                     <p class="col-small" style="position: absolute;">{{ lt.learntmsg|capfirst|safe }}</p>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Endhere -->
-
     <!-- Contact me -->
-    <h1 class="heading_tag">Contact Me!</h1>
-    <div class="col-sm-6" style="margin: auto;top:40px;">
-        <div class="container">
-            <form class="form-style" method="POST" action="{% url 'home' %}">{% csrf_token %}
-                <center>
-                    <input class="input-style" type="text" name="name" placeholder="Name" required><br>
-                    <input class="input-style" type="email" name="email" placeholder="Email" required><br>
-                    <input class="input-style" type="text" name="phNumber" placeholder="Ph-Number"><br><br>
-                    <input class="btn btn-danger" type="submit">
-                </center>
-            </form>
+    <div>
+        <h1 class="heading_tag">Contact Me!</h1>
+        <div class="col-sm-4" style="margin:0 auto;"><br>
+                <div class="row">
+                    <a href="{{ media.instagram }}" target="blank" style="margin:auto !important;"><i class="fa fa-instagram" id="social_tag" style="margin:auto !important;color:pink"></i></a>
+                    <a href="{{ media.twitter }}" target="blank" style="margin:auto !important;"><i class="fa fa-twitter" id="social_tag" style="margin:auto !important;color:blue"></i></a>
+                    <a href="{{ media.quora }}" target="blank" style="margin:auto !important;"><i class="fa fa-quora" id="social_tag" style="margin:auto !important;color:red"></i></a>
+                    <a href="{{ media.github }}" target="blank" style="margin:auto !important;"><i class="fa fa-github" id="social_tag" style="margin:auto !important;"></i></a>
+                    <a href="" style="margin:auto !important;" onclick="alert('Privacy!')"><i class="fa fa-whatsapp" id="social_tag" style="margin:auto !important;color:green"></i></a>
+                </div><style>#social_tag{font-size: 30px !important;}</style>
+            </div>
         </div>
+    </div> 
+    <!-- Endhere -->
+    <!-- Endhere -->
     </div><br><br>
     <div class="heading_tag" style="font-size: 80px;">BYE🙌until next time.</div>
     <br><br><br>
@@ -309,6 +289,147 @@
         </p>
     </div>
 </body>
+<style>
+    
+html, body {
+    background-color: #100E17 !important;
+    color: white !important;
+    overflow-x: hidden;
+}
+
+a, a:hover {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+
+/* Navbar start here */
+
+.navbar {
+    background-color: #201C29;
+    align-content: center;
+    height: 50px;
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    z-index: 1;
+}
+
+/* Navbar Endhere! */
+
+/* Big name start */
+
+@media only screen and (max-width: 600px) {
+    .my_name {
+        width: 80% !important;
+    }
+
+    .st0-back {
+        width: 60% !important;
+    }
+
+    .col-small {
+        padding-bottom: 40px;
+        text-align: center;
+    }
+
+    #project_gap {
+        padding-bottom: 90px;
+    }
+
+    #project, #hide_for_sometime {
+        opacity: 0;
+    }
+}
+
+#project, #hide_for_sometime {
+    opacity: 0;
+}
+
+.my_name {
+    padding-top: 90pt;
+    width: 50%;
+}
+
+.col-small {
+    margin:0px auto;
+    text-align: center;
+
+}
+
+.heading_tag {
+    padding: 40px 0 15px 0;
+    color: white; 
+    font-family:'Amatic SC'; 
+    text-align:center;
+    font-size: 40px;
+}
+
+
+/* Skills */
+
+.bar {
+    height: 30px;
+    width: 0px;
+}
+
+#bar_num_py, #bar_num_dj, #bar_num_ht, #bar_num_cs, #bar_num_sc, #bar_num_js, #bar_num_psd, #bar_num_ai {
+    outline: none;
+    border: none;
+    background-color: unset;
+    float: right;
+    color: white;
+    margin-left: 20px ;
+    width: 2pc;
+}
+
+/* EndSkills */
+
+/* contact me */
+
+.form-style {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); 
+    border-radius: 10px;
+    background:black;
+    margin-top: 10px;
+    padding: 30px 30px 30px 30px;
+    bottom: 40px;
+    width: 100%;
+    margin: 0px auto;
+}
+
+.input-style {
+    margin: 10px auto;
+    width:250px;
+    outline: none;
+    border: none;
+    background: none;
+    color: white;
+    border-bottom: 3px solid blanchedalmond;
+}
+
+.input-style:hover {
+        border-bottom: 3px solid royalblue;
+        transition:1s;
+
+}
+
+
+/* EndContact */
+
+/* footer */
+
+.footer {
+    
+    width: 100%;
+    height: 50px;
+    background-color: #201C29;
+}
+
+/* endfoot */
+
+</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
 <script>
     // for svg animation
@@ -528,15 +649,16 @@
 
     // hiding the project name
 
+
     anime({
         targets: '#project, #hide_for_sometime',
         opacity: 1,
-        delay: 2900,
-        duration: 300,
-        easing: 'easeInOutCirc',
+        delay: 5000,
+        duration: 1290,
+        easing: 'easeInOutBack',
     });
 
-    // Dont ask what I did here
+    // Don't ask what I did here
     x = 1;
     window.addEventListener("scroll", Event => {
 

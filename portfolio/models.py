@@ -12,6 +12,14 @@ class LearntModel(models.Model):
     def __str__(self):
         return self.learntmsg[:50]
 
+class Project(models.Model):
+    project_image = models.CharField(max_length=250)
+    project_name = models.CharField(max_length=100)
+    project_body = models.TextField()
+
+    def __str__(self):
+        return self.project_name
+
 class SkillModel(models.Model):
     python = models.CharField(max_length=3)
     django = models.CharField(max_length=3)
@@ -27,16 +35,15 @@ class SkillModel(models.Model):
     def __str__(self):
         return self.python
 
-
-class ContactModel(models.Model):
-    name = models.CharField(max_length=100)
-    email = models.EmailField()
-    phnumber = models.CharField(max_length=100)
+class SocialMedia(models.Model):
+    instagram = models.CharField(max_length=100)
+    twitter = models.CharField(max_length=100)
+    quora = models.CharField(max_length=100)
+    github = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.name
-
-
+        return self.instagram
+        
 class SeoModel(models.Model):
     head_tag = models.TextField()
 
